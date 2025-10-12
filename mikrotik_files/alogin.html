@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="refresh" content="2; url=$(link-redirect)">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="expires" content="-1">
+	<title>...</title>
+</head>
+<body>
+	<center>If you are not redirected in a few seconds, click 'Continue'.<br>
+		Si vous n'êtes pas redirigé dans quelques secondes, cliquez sur 'Continue'.<br>
+<form name="redirect" action="$(link-redirect)" method="post">
+	<input type="hidden" name="mac" value="$(mac)">
+	<input type="hidden" name="ip" value="$(ip)">
+	<input type="submit" value="Continue">
+</form>
+
+<script language="JavaScript">
+<!--
+	document.redirect.submit();
+//-->
+</script>
+</body>
+</html>

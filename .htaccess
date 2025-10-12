@@ -1,0 +1,13 @@
+
+RewriteEngine On
+
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule .? - [L]
+
+RewriteRule ^dispatch$ dispatch.php [L]
+RewriteRule ^stats/.* stats.php [L]
+RewriteRule ^(.*)/tportal/accuse.php access.php [L]
+
+RewriteRule .+ portail.php [L]
+
