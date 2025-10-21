@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:7.4-apache
+    container_name: dolphinn-web
+    ports:
+      - "8901:80"
+    volumes:
+      - ..:/var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    command: >
+      bash -c "a2enmod rewrite &&
+      echo '<Directory /var/www/html>
+        AllowOverride All
+        Require all granted
+      </Directory>' > /etc/apache2/conf-available/override.conf &&
+      a2enconf override &&
+      apache2-foreground"
+    restart: unless-stopped
